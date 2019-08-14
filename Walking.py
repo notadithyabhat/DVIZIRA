@@ -63,7 +63,6 @@ while True:
             exit()
     screen.fill((0, 0, 0))
     boundaries()
-    print('reached')
     gx,gy = gx+random.randint(-7,7),gy+random.randint(-7,7)
     while ((gx not in range (7+radius,633-radius)) or (gy not in range(7+radius,473-radius))) or ((gx in range(111-radius,529+radius)) and (gy in range(71-radius,409+radius))):
         gx,gy = gx+random.randint(-7,7),gy+random.randint(-7,7)
@@ -71,11 +70,9 @@ while True:
     green.generate()
     green.generate1()
     green_data.write(f'{gx},{gy}\n')
-    print('reached 2')
     rx,ry = rx+random.randint(-7,7),ry+random.randint(-7,7)
     while (rx not in range(127+radius,513-radius)) or (ry not in range(87+radius,393-radius)):
         rx,ry = rx+random.randint(-7,7),ry+random.randint(-7,7)
-    print('reached 3')
     red = point((255,0,0),screen,rx,ry,radius)
     red_data.write(f'{rx},{ry}\n')
     red.generate()

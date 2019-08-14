@@ -50,12 +50,12 @@ if regen.upper() == 'Y':
         x1 = eachline.split(',')
         x = [int(each) for each in x1]
         gcoordinates.append(x)
-    print(gcoordinates)
+    
     for eachline in red_co1:
         x1 = eachline.split(',')
         x = [int(each) for each in x1]
         rcoordinates.append(x)
-    print(rcoordinates)
+    
     while True:
         for event in pygame.event.get():
             if event.type == QUIT:
