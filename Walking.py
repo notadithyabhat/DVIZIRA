@@ -18,7 +18,7 @@ class point:
         return pygame.draw.circle(screen, self.color, self.pos, self.radius)
 
     def generate1(self):
-        return pygame.draw.circle(screen, self.color, self.pos, self.radius1,2)
+        return pygame.draw.circle(screen, self.color, self.pos, self.radius1,1)
 
 
 def boundaries():
