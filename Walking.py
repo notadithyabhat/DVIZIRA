@@ -9,12 +9,17 @@ class point:
         self.color = color
         self.surface = surface
         self.pos = (x,y)
-        self.radius = 7+radius
+        self.radius = 7
+        self.radius1 = 7+radius
 
             
     
     def generate(self):
         return pygame.draw.circle(screen, self.color, self.pos, self.radius)
+
+    def generate1(self):
+        return pygame.draw.circle(screen, self.color, self.pos, self.radius1,2)
+
 
 def boundaries():
     pygame.draw.rect(screen,(0,0,255),(0,0,640,480),2)    
@@ -64,6 +69,7 @@ while True:
         gx,gy = gx+random.randint(-7,7),gy+random.randint(-7,7)
     green = point((0,200,0),screen,gx,gy,radius)
     green.generate()
+    green.generate1()
     green_data.write(f'{gx},{gy}\n')
     print('reached 2')
     rx,ry = rx+random.randint(-7,7),ry+random.randint(-7,7)
@@ -73,5 +79,6 @@ while True:
     red = point((255,0,0),screen,rx,ry,radius)
     red_data.write(f'{rx},{ry}\n')
     red.generate()
+    red.generate1()
     clock.tick(fps)
     pygame.display.update()

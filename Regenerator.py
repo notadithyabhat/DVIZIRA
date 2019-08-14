@@ -9,12 +9,16 @@ class point:
         self.color = color
         self.surface = surface
         self.pos = (x,y)
-        self.radius = 7+radius
+        self.radius = 7
+        self.radius1 = 7+radius
 
             
     
     def generate(self):
         return pygame.draw.circle(screen, self.color, self.pos, self.radius)
+
+    def generate1(self):
+        return pygame.draw.circle(screen, self.color, self.pos, self.radius1,1)
 
 
 def boundaries():
@@ -53,6 +57,7 @@ if regen.upper() == 'Y':
                 boundaries()
                 green = point((0,200,0),screen,x,y,data[3])
                 green.generate()
+                green.generate1()
                 clock.tick(data[2])
                 pygame.display.update()
         
